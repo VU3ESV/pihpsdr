@@ -179,7 +179,7 @@ void set_attenuation_value(double value) {
       if (have_rx_gain) {
         attenuation_scale=gtk_scale_new_with_range(GTK_ORIENTATION_HORIZONTAL,-12.0, 48.0, 1.00);
       } else {
-        attenuation_scale=gtk_scale_new_with_range(GTK_ORIENTATION_HORIZONTAL,0.0, 31.0, 1.00);
+        attenuation_scale=gtk_scale_new_with_range(GTK_ORIENTATION_HORIZONTAL,-12.0, 31.0, 1.00);
       }
       gtk_widget_set_size_request (attenuation_scale, 400, 30);
       gtk_range_set_value (GTK_RANGE(attenuation_scale),(double)adc[active_receiver->adc].attenuation);
@@ -852,7 +852,7 @@ fprintf(stderr,"sliders_init: width=%d height=%d\n", width,height);
     gtk_widget_override_font(attenuation_label, pango_font_description_from_string("Sans 10"));
     gtk_widget_show(attenuation_label);
     gtk_grid_attach(GTK_GRID(sliders),attenuation_label,6,0,1,1);
-    attenuation_scale=gtk_scale_new_with_range(GTK_ORIENTATION_HORIZONTAL,0.0, 31.0, 1.0);
+    attenuation_scale=gtk_scale_new_with_range(GTK_ORIENTATION_HORIZONTAL,-12.0, 31.0, 1.0);
     gtk_widget_override_font(attenuation_scale, pango_font_description_from_string("Sans 10"));
     gtk_range_set_value (GTK_RANGE(attenuation_scale),adc[active_receiver->adc].attenuation);
     gtk_range_set_increments (GTK_RANGE(attenuation_scale),1.0,1.0);
